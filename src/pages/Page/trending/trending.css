@@ -1,0 +1,50 @@
+.product-card {
+    overflow: hidden;
+  }
+  *{
+    text-decoration: none;
+  }
+  .product-card img {
+    width: 100%;
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card:hover img {
+    transform: scale(1.1);
+    
+  }
+  
+  .hover-overlay {
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .product-card:hover .hover-overlay {
+    opacity: 1;
+    display: flex;
+
+  }
+  
+  .btn-outline-dark {
+    border-color: #333;
+    color: #333;
+  }
+  
+  .btn-outline-dark:hover {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  /* Add a smooth transition for the card */
+.card-hover {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Move the card up slightly on hover */
+.card-hover:hover {
+    transform: translateY(-10px); /* Move up by 10px */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow for a floating effect */
+}
+
+/* Optionally, add a subtle scale effect */

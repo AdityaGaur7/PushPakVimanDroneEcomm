@@ -1,0 +1,22 @@
+
+.cont {
+  border: 2px solid #ab12b3;
+  
+    width: 100%;
+  }
+  .cont img{
+    filter: invert(1);
+  }
+  .cont h6 , .cont p{
+    color:#ab12b3;
+  }
+  .line-txt{
+   
+  }
+  @media (max-width:720px) {
+    .flex-column{
+      flex-direction: row !important;
+      justify-content: center;
+      border: 1px solid #ab12b3;
+    }
+  }

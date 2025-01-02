@@ -1,0 +1,36 @@
+:root {
+  --primary-color: #2563eb;
+  --text-color: #1f2937;
+  --bg-color: #ffffff;
+  --border-color: #e5e7eb;
+  --hover-bg: #f3f4f6;
+}
+
+[data-theme="dark"] {
+  --primary-color: #3b82f6;
+  --text-color: #f3f4f6;
+  --bg-color: #111827;
+  --border-color: #374151;
+  --hover-bg: #1f2937;
+}
+
+@layer utilities {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+.text-truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.object-fit-cover {
+  object-fit: cover;
+}

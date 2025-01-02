@@ -1,0 +1,130 @@
+.home-container {
+  overflow-x: hidden;
+}
+
+/* CTA Section Styles */
+.cta-section {
+  padding: 5rem 0;
+  background-color: #f8f9fa;
+}
+
+.cta-card {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.cta-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #00d4ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cta-description {
+  font-size: 1.1rem;
+  color: #6c757d;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.btn-lg {
+  padding: 1rem 2.5rem;
+  font-weight: 600;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.btn-lg:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cta-stats {
+  display: flex;
+  justify-content: flex-end;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.stat-divider {
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.stat-divider:not(:last-child) {
+  border-right: 2px solid #e9ecef;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  display: block;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .cta-card {
+    padding: 2rem;
+  }
+
+  .cta-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .cta-description {
+    text-align: center;
+  }
+
+  .cta-stats {
+    justify-content: center;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .cta-section {
+    padding: 3rem 0;
+  }
+
+  .cta-card {
+    padding: 1.5rem;
+  }
+
+  .cta-title {
+    font-size: 1.75rem;
+  }
+
+  .cta-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .stat-divider {
+    padding: 1rem 0;
+  }
+
+  .stat-divider:not(:last-child) {
+    border-right: none;
+    border-bottom: 2px solid #e9ecef;
+  }
+}

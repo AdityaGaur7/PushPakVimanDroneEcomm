@@ -1,0 +1,270 @@
+.product-card {
+    overflow: hidden;
+  }
+  
+  .product-card img {
+    width: 100%;
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card:hover img {
+    transform: scale(1.1);
+    
+  }
+  
+  .hover-overlay {
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .product-card:hover .hover-overlay {
+    opacity: 1;
+    display: flex;
+
+  }
+  
+  .btn-outline-dark {
+    border-color: #333;
+    color: #333;
+  }
+  
+  .btn-outline-dark:hover {
+    background-color: #333;
+    color: #fff;
+  }
+  
+
+  /* ///////////////////////////// */
+  .container {  
+    background-color: #f8f9fa; /* Light background */  
+    padding: 20px;  
+    border-radius: 8px;  
+  }  
+  
+  h2 {  
+    font-size: 2rem;  
+    color: #fff; /* White text for overlay */  
+  }  
+  
+  h3 {  
+    font-size: 1.5rem;  
+    color: #333; /* Darker text color */  
+  }  
+  
+  p {  
+    font-size: 1rem;  
+    color: #666; /* Medium text color */  
+  }
+  .p-10{
+    padding:5rem 15rem;
+  }
+
+
+  /* ///////////////////////////////////////////// */
+
+  .container {  
+    background-color: #f8f9fa; /* Light background */  
+    padding: 20px;  
+    border-radius: 8px;  
+  }  
+  
+  h2 {  
+    font-size: 2rem;  
+    color: #2c3e50; /* Darker text color */  
+  }  
+  
+  p {  
+    font-size: 1rem;  
+    color: #666; /* Medium text color */  
+  }
+  .img-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .img-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(255, 164, 212, 0.6), 0 6px 20px rgba(255, 162, 212, 0.4);
+    filter: brightness(1.1) ;
+    opacity: 0.8;
+  }
+  .choosestyle{
+    padding: 2rem 15rem;
+    position: relative;  
+    z-index: 2;
+    background: bottom;
+  }
+  .rem5{
+    width: 5rem;
+
+  }
+  .videobtn{
+    text-decoration: none;
+    margin:5px 15px;
+    
+  }
+
+  @media (max-width:780px) {
+    .p-10{
+        padding: 4rem;
+    }
+    .choosestyle{
+        padding: 4rem;
+    }
+  }
+  /* Existing Styles */
+.product-card {
+    overflow: hidden;
+  }
+  
+  .product-card img {
+    width: 100%;
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card:hover img {
+    transform: scale(1.1);
+  }
+  
+  .hover-overlay {
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .product-card:hover .hover-overlay {
+    opacity: 1;
+    display: flex;
+  }
+  
+  .btn-outline-dark {
+    border-color: #333;
+    color: #333;
+  }
+  
+  .btn-outline-dark:hover {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  /* Container Styles */
+  .container {  
+    background-color: #f8f9fa; /* Light background */  
+    padding: 20px;  
+    border-radius: 8px;  
+  }  
+    
+  h2 {  
+    font-size: 2rem;  
+    color: #2c3e50; /* Darker text color */  
+  }  
+    
+  h3 {  
+    font-size: 1.5rem;  
+    color: #333; /* Darker text color */  
+  }  
+    
+  p {  
+    font-size: 1rem;  
+    color: #666; /* Medium text color */  
+  }
+  
+  .p-10 {
+    padding: 5rem 15rem;
+  }
+  
+  .img-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .img-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(255, 164, 212, 0.6), 0 6px 20px rgba(255, 162, 212, 0.4);
+    filter: brightness(1.1);
+    opacity: 0.8;
+  }
+  
+  .choosestyle {
+    padding: 2rem 15rem;
+    position: relative;  
+    z-index: 2;
+    background: bottom;
+  }
+  
+  .rem5 {
+    width: 5rem;
+  }
+  
+  .videobtn {
+    text-decoration: none;
+    margin: 5px 15px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1200px) {
+    .p-10 {
+      padding: 4rem 10rem;
+    }
+  
+    .choosestyle {
+      padding: 2rem 10rem;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .p-10 {
+      padding: 4rem 8rem;
+    }
+  
+    .choosestyle {
+      padding: 2rem 8rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .p-10 {
+      padding: 3rem;
+    }
+  
+    .choosestyle {
+      padding: 2rem 4rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .p-10 {
+      padding: 2rem;
+    }
+  
+    .choosestyle {
+      padding: 1rem;
+    }
+  
+    .container {
+      padding: 10px;
+    }
+  
+    .choosestyle {
+      padding: 1rem;
+    }
+  
+    .product-card {
+      margin-bottom: 1rem;
+    
+    }
+  
+    .product-card img {
+      height: auto;
+      cursor: pointer;
+    }
+  
+    .img-hover {
+      box-shadow: none;
+    }
+  
+    .container .row {
+      margin-bottom: 1rem;
+    }
+  }
+  
+ 

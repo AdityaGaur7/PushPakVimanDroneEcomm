@@ -1,0 +1,86 @@
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 102, 0, 0.8); /* Orange overlay */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .card-overlay {
+    opacity: 1;
+}
+
+.card-text {
+    position: relative;
+    z-index: 10;
+}
+
+
+/* /////////////// contact //////////////////// */
+
+.container {
+    max-width: 900px;
+  }
+  
+  .contact-box {
+    /* background-color: #000; */
+    color: #040404;
+    border-radius: 5px;
+    border: 1px solid black;
+  }
+  
+  .icon {
+    background-color: #000;
+    border-radius: 50%;
+   filter: invert(1);
+    padding: 15px;
+  }
+  .icon:hover .contact-box{
+   
+   
+    filter: invert(1);
+    
+  }
+  .contact-form form .form-group input,
+  .contact-form form .form-group textarea {
+    border-radius: 0;
+    border-color: #ddd;
+    box-shadow: none;
+    background-color: #f9f9f9;
+  }
+  
+  .contact-form form .btn {
+    border-radius: 0;
+  }
+  
+  /* ///////////////////////// */
+
+  .map-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+  }
+  
+  .map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: 0;
+  }
+  
+  .text-center .btn:hover{
+    background-color: #ab12b3;
+    columns: white;
+    transition: .55s ease;
+  }

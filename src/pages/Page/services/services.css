@@ -1,0 +1,269 @@
+/* Container Styling */
+.container {
+    text-align: center;
+    margin-top: 5rem; /* Adds top margin */
+    padding: 2rem; /* Adds padding to the container */
+    border: 1px solid #ddd; /* Light border for the container */
+    border-radius: 0; /* No border-radius */
+}
+
+/* Heading Styling */
+h1, h5 {
+    margin-bottom: 1.5rem; /* Adds space below headings */
+}
+
+/* Card Styling */
+.card {
+    border: 1px solid #ddd; /* Light border for the card */
+    border-radius: 0; /* No border-radius */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+/* Card Body Styling */
+.card-body {
+    padding: 1.5rem; /* Padding inside the card */
+}
+
+/* Card Title Styling */
+.card-title {
+    font-size: 1.25rem; /* Title font size */
+    margin-bottom: 1rem; /* Space below the title */
+    font-weight: bold; /* Bold text */
+        color: white;
+}
+
+/* Card Text Styling */
+.card-text {
+    font-size: 1rem; /* Text font size */
+    color: #555; /* Dark gray text color */
+}
+
+/* Hover Effects */
+.card:hover {
+    transform: translateY(-5px); /* Slightly moves the card up */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increases shadow on hover */
+}
+
+/* Section Title Styling */
+h5.mt-5 {
+    margin-top: 3rem; /* Adds top margin for the section title */
+    font-weight: bold; /* Bold text */
+}
+
+/* Section Paragraph Styling */
+p {
+    font-size: 1rem; /* Paragraph font size */
+    color: #666; /* Gray text color */
+    line-height: 1.5; /* Increases line-height for readability */
+}
+
+/* Container Styling */
+.container {
+  text-align: center;
+  margin-top: 5rem; /* Adds top margin */
+  padding: 2rem; /* Adds padding to the container */
+}
+
+/* Card Row Styling */
+.row {
+  margin: 1rem 0; /* Adds vertical margin between rows */
+}
+
+/* Card Image Styling */
+.img-fluid {
+  border-radius: 0; /* Removes border-radius */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for transform and shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds subtle shadow */
+}
+
+/* Hover Effect for Images */
+.img-fluid:hover {
+  transform: translateY(-10px); /* Moves the image up on hover */
+  animation: bounce 1s infinite; /* Adds bounce animation on hover */
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%,100% {
+      transform: translateY(0); /* Default position */
+  }
+  50% {
+      transform: translateY(-5px); /* Moves up */
+  }
+
+}
+
+/* Heading Styling */
+h1, h2 {
+  margin-bottom: 1.5rem; /* Adds space below headings */
+}
+
+/* Paragraph Styling */
+p {
+  font-size: 1rem; /* Sets font size */
+  color: #666; /* Sets text color */
+  line-height: 1.6; /* Increases line-height for readability */
+}
+
+/* Border Styling */
+.border {
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 0; /* No border-radius */
+  padding: 1rem; /* Adds padding inside the border */
+}
+
+/* Container Styling */
+.container {
+  margin-top: 5rem; /* Adds top margin */
+  padding: 2rem; /* Adds padding to the container */
+}
+
+/* Image Container Styling */
+.image-container {
+  position: relative;
+  overflow: hidden; /* Ensures the overlay does not overflow */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+/* Image Styling */
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block; /* Ensures images do not have extra space below */
+  transition: transform 0.3s ease; /* Smooth transition for scaling effect */
+}
+
+/* Overlay Styling */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay with opacity */
+  color: #fff; /* White text color */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition for fade-in effect */
+  text-align: center;
+  padding: 1rem; /* Padding inside the overlay */
+  border-radius: 8px; /* Rounded corners for the overlay */
+}
+
+/* Title and Subtitle Styling */
+.overlay .title {
+  font-size: 1.25rem; /* Title font size */
+  margin-bottom: 0.5rem; /* Space below the title */
+  font-weight: bold; /* Bold text */
+}
+
+.overlay .subtitle {
+  font-size: 1.75rem; /* Subtitle font size */
+  margin-bottom: 1rem; /* Space below the subtitle */
+  font-weight: bold; /* Bold text */
+}
+
+.overlay .description {
+  font-size: 1rem; /* Description font size */
+}
+
+/* Hover Effects */
+.image-container:hover {
+  transform: scale(1.05); /* Slightly enlarges the image container */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increases shadow on hover */
+}
+
+.image-container:hover img {
+  transform: scale(1.1); /* Slightly enlarges the image */
+}
+
+.image-container:hover .overlay {
+  opacity: 1; /* Shows the overlay on hover */
+}
+
+.team{
+  /* padding: 5px 15rem; */
+}
+
+.card {  
+  border: none;  
+  position: relative;  
+  display: block;
+  overflow: hidden; /* Ensure icons are hidden initially */  
+}  
+
+.card-img-top {  
+  border-radius: 10px;  
+  width: 150px; /* Set a fixed width */  
+  height: 150px; /* Set a fixed height */  
+  object-fit: cover; /* Cover the area */  
+}  
+
+.social-icons {  
+  position: absolute;  
+  top: 50%;  
+  right: -60px; /* Position off-screen initially */  
+  transform: translateY(-50%);  
+  opacity: 0; /* Hide initially */  
+  transition: all 0.3s ease; /* Smooth transition */  
+}  
+
+.card:hover .social-icons {  
+  right: 10px; /* Move into view on hover */  
+  opacity: 1; /* Show icons on hover */  
+}  
+
+.social-icon {  
+  display: block;  
+  margin: 5px 0;  
+  color: #333; /* Icon color */  
+  font-size: 20px; /* Icon size */  
+  transition: color 0.3s ease; /* Smooth color transition */  
+}  
+
+.social-icon:hover {  
+  color: #ab12b3; /* Change color on hover */  
+}
+.overlay h5 , .overlay h3{
+  color:#ab12b3 ;
+}
+
+/* ////////////////////////////////////// */
+
+
+
+
+/* Container for the category items */
+.category-item {
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect: move the item up and add a shadow */
+.category-item:hover {
+transform: translateY(-10px); /* Move up by 10px */
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Add a soft shadow */
+}
+
+/* Ensure the image is fully responsive and fits within the category item */
+.category-item img {
+width: 100%;
+height: auto;
+border-radius: 10px; /* Optional: Add some rounded corners */
+}
+
+/* Add a bit of spacing between image and text */
+.category-item h5 {
+margin-top: 10px;
+transition: color 0.3s ease;
+}
+
+/* Optional: Change the text color on hover */
+.category-item:hover h5 {
+color: #3b8651; /* Change to a subtle blue color on hover */
+}
