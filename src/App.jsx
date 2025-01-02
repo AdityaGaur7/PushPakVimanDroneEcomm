@@ -18,7 +18,7 @@ import CreateProduct from "./pages/Admin/CreateProduct.jsx";
 import Users from "./pages/Admin/Users.jsx";
 import Products from "./pages/Admin/Products.jsx";
 import AdminOrders from "./pages/Admin/AdminOrders.jsx";
-import Cart from "./components/Cart/cart.jsx";
+import Cart from "./components/Cart/Cart.jsx";
 import ProductSearch from "./pages/product-search/Product-search.jsx";
 import ProductDetails from "./pages/ProductDetails/ProductDetails.jsx";
 import NotFound from "./pages/NotFound.jsx";
