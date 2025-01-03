@@ -18,12 +18,28 @@ const Spinner = ({ path = "login" }) => {
   }, [count, navigate, location, path]);
 
   return (
-    <div>
-      <div className="d-flex flex-column justify-content-center">
-        <h1>Redirecting in {count} seconds</h1>
-        <div className="spinner-border" role="status">
+    <div 
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "#f8f9fa"
+      }}
+    >
+      <div className="d-flex flex-column align-items-center gap-3">
+        <div className="spinner-border text-primary" 
+          style={{ 
+            width: "3rem", 
+            height: "3rem" 
+          }} 
+          role="status"
+        >
           <span className="visually-hidden">Loading...</span>
         </div>
+        <h2 className="text-center" style={{ color: "#0d6efd" }}>
+          Redirecting in {count} second{count !== 1 ? 's' : ''}
+        </h2>
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { Modal, Select, Input } from "antd";
 import { FiShoppingCart, FiHeart, FiFilter, FiSearch } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
+import Spinner from "../../assets/Spinner.jsx";
 
 const { Option } = Select;
 
@@ -21,6 +22,7 @@ const HomePage = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [sortBy, setSortBy] = useState("default");
+  const [loading, setLoading] = useState(true);
 
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
@@ -41,6 +43,7 @@ const HomePage = () => {
 
   const getAllProducts = async () => {
     try {
+      setLoading(true);
       const { data } = await axios.get(`${API_URL}/api/product/get-product`);
       if (data.success) {
         setProduct(data.products);
@@ -49,6 +52,8 @@ const HomePage = () => {
     } catch (error) {
       console.log(error);
       toast.error("Error fetching products");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -213,8 +218,21 @@ const HomePage = () => {
           </div>
         </Modal>
 
-        {/* Products Grid */}
-        {currentProducts.length > 0 ? (
+        {/* Products Grid with Loading State */}
+        {loading ? (
+          <div className="text-center py-5">
+            <div className="spinner-border text-primary" 
+              style={{ 
+                width: "3rem", 
+                height: "3rem" 
+              }} 
+              role="status"
+            >
+              <span className="visually-hidden">Loading...</span>
+            </div>
+            <h4 className="mt-3 text-primary">Loading Products...</h4>
+          </div>
+        ) : currentProducts.length > 0 ? (
           <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
             {currentProducts.map((product) => (
               <motion.div
@@ -270,42 +288,44 @@ const HomePage = () => {
           </div>
         )}
 
-        {/* Pagination */}
-        <nav className="mt-4">
-          <ul className="pagination justify-content-center">
-            <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
-              <button
-                className="page-link"
-                onClick={() => handlePageChange(currentPage - 1)}
-                disabled={currentPage === 1}
-              >
-                Previous
-              </button>
-            </li>
-            {[...Array(totalPages)].map((_, index) => (
-              <li 
-                key={index + 1} 
-                className={`page-item ${currentPage === index + 1 ? 'active' : ''}`}
-              >
+        {/* Show pagination only when not loading and have products */}
+        {!loading && currentProducts.length > 0 && (
+          <nav className="mt-4">
+            <ul className="pagination justify-content-center">
+              <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
                 <button
                   className="page-link"
-                  onClick={() => handlePageChange(index + 1)}
+                  onClick={() => handlePageChange(currentPage - 1)}
+                  disabled={currentPage === 1}
                 >
-                  {index + 1}
+                  Previous
                 </button>
               </li>
-            ))}
-            <li className={`page-item ${currentPage === totalPages ? 'disabled' : ''}`}>
-              <button
-                className="page-link"
-                onClick={() => handlePageChange(currentPage + 1)}
-                disabled={currentPage === totalPages}
-              >
-                Next
-              </button>
-            </li>
-          </ul>
-        </nav>
+              {[...Array(totalPages)].map((_, index) => (
+                <li 
+                  key={index + 1} 
+                  className={`page-item ${currentPage === index + 1 ? 'active' : ''}`}
+                >
+                  <button
+                    className="page-link"
+                    onClick={() => handlePageChange(index + 1)}
+                  >
+                    {index + 1}
+                  </button>
+                </li>
+              ))}
+              <li className={`page-item ${currentPage === totalPages ? 'disabled' : ''}`}>
+                <button
+                  className="page-link"
+                  onClick={() => handlePageChange(currentPage + 1)}
+                  disabled={currentPage === totalPages}
+                >
+                  Next
+                </button>
+              </li>
+            </ul>
+          </nav>
+        )}
       </div>
     </Layout>
   );
