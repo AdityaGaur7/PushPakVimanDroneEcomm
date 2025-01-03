@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import "./herosection.css";
-
+import { useNavigate } from "react-router-dom";
 const HeroSection = () => {
+
+  const navigate = useNavigate();
   const fadeIn = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
@@ -57,16 +59,17 @@ const HeroSection = () => {
               className="btn btn-primary"
               whileHover={{ scale: 1.05, boxShadow: "0 5px 15px rgba(0,0,0,0.2)" }}
               whileTap={{ scale: 0.95 }}
+              onClick={()=>navigate('/products')}
             >
               Explore Products
             </motion.button>
-            <motion.button 
+            {/* <motion.button 
               className="btn btn-outline"
               whileHover={{ scale: 1.05, boxShadow: "0 5px 15px rgba(0,0,0,0.1)" }}
               whileTap={{ scale: 0.95 }}
             >
               <span className="play-icon">▶</span> Watch Demo
-            </motion.button>
+            </motion.button> */}
           </motion.div>
 
           <motion.div 

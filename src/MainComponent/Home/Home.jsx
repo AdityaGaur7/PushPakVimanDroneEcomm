@@ -4,6 +4,7 @@ import HeroSection from "../../components/herosection/Herosection.jsx";
 import Layout from "../Layout.jsx";
 import "./home.css";
 import Hero from "../../components/hero/Hero.jsx";
+import { NavLink } from "react-router-dom";
 const HomeComponent = () => {
   return (
     <Layout>
@@ -32,9 +33,9 @@ const HomeComponent = () => {
                   </p>
                 </div>
                 <div className="col-lg-5 text-lg-end text-center mt-4 mt-lg-0">
-                  <a href="/products" className="btn btn-primary btn-lg">
+                  <NavLink to="/products" className="btn btn-primary btn-lg">
                     Explore Products
-                  </a>
+                  </NavLink>
                   <div className="cta-stats">
                     <div className="stat-divider">
                       <span className="stat-number">98%</span>

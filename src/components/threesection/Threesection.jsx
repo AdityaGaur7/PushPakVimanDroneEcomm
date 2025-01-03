@@ -1,7 +1,9 @@
 import React from "react";
 import "./threesection.css";
+import { useNavigate } from "react-router-dom";
 
 const ThreeSection = () => {
+  const navigate = useNavigate();
   const features = [
     {
       title: "Professional Drones",
@@ -35,7 +37,7 @@ const ThreeSection = () => {
                 <div className="service-content">
                   <h3 className="service-title">{feature.title}</h3>
                   <p className="service-description">{feature.description}</p>
-                  <button className="btn btn-light service-btn">
+                  <button className="btn btn-light service-btn" onClick={()=>navigate(`/product/${feature.title}`)}>
                     Learn More
                   </button>
                 </div>

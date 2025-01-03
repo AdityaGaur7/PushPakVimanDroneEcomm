@@ -100,14 +100,15 @@ const Navbar = ({ loggedin, isadmin, onThemeToggle, currentTheme }) => {
             </AnimatePresence>
           </div>
 
-          <NavLink className="nav-link" to="/services">Services</NavLink>
-          <NavLink className="nav-link" to="/faq">FAQ</NavLink>
+          {/* <NavLink className="nav-link" to="/services">Services</NavLink>
+          <NavLink className="nav-link" to="/faq">FAQ</NavLink> */}
           <NavLink className="nav-link" to="/products">All Products</NavLink>
           
           {/* User Menu */}
           <div className="nav-right">
+        
             <NavLink to="/cart" className="cart-link">
-              <BsCart3 />
+               <BsCart3 />
               {cart?.length > 0 && <span className="cart-count">{cart.length}</span>}
             </NavLink>
 

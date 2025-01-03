@@ -143,15 +143,15 @@ const ServicesComponent = () => {
                 3D printers provide industry-leading accuracy and precision.
               </p>
 
-              <i className="fa fa-play"></i>
+              {/* <i className="fa fa-play"></i>
               <a href="#" className="videobtn">
                 VIEW OUR VIDEO
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
 
-        <div className="container my-5 team">
+        {/* <div className="container my-5 team">
           <h2 className="text-center">Innovators Behind Our Success</h2>
           <p className="text-center">
             Our team of experts specializes in drones, electronics components,
@@ -209,7 +209,7 @@ const ServicesComponent = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </Layout>
   );

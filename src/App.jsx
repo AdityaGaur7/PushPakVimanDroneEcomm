@@ -32,8 +32,8 @@ function App() {
           <Route path="/login" element={<LoginComponent />} />
           <Route path="/signup" element={<SignupComponent />} />
           
-          <Route path="/faq" element={<FaqComponent />} />
-          <Route path="/about" element={<AboutComponent />} />
+          {/* <Route path="/faq" element={<FaqComponent />} />
+          <Route path="/about" element={<AboutComponent />} /> */}
           <Route path="/contact" element={<ContactComponent />} />
           <Route path="/dashboard" element={<Private />}>
             <Route path="user" element={<Dashboard />} />

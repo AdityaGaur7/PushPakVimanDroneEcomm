@@ -2,10 +2,11 @@ import React, { useContext } from "react";
 import { motion } from "framer-motion";
 import "./hero.css";
 import { ThemeContext } from "../../Context/ThemeContext.jsx";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const { theme } = useContext(ThemeContext);
-
+const navigate = useNavigate();
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { 
@@ -36,18 +37,20 @@ const Hero = () => {
           </p>
           <div className="hero-cta">
             <motion.a 
-              href="/search/featured" 
+              
               className="primary-btn"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={()=>navigate('/products')}
             >
               Shop Now
             </motion.a>
             <motion.a 
-              href="/about" 
+             
               className="primary-btn"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={()=>navigate('/services')}
             >
               Learn More
             </motion.a>
@@ -70,7 +73,7 @@ const Hero = () => {
               <div className="category-overlay">
                 <h3>Drones</h3>
                 <p>Explore aerial technology</p>
-                <a href="/search/drone" className="category-link">View Collection</a>
+                <a href="/product/drone" className="category-link">View Collection</a>
               </div>
             </div>
           </div>
@@ -81,7 +84,7 @@ const Hero = () => {
               <div className="category-overlay">
                 <h3>IOT Solutions</h3>
                 <p>Smart connectivity</p>
-                <a href="/search/components" className="category-link">View Collection</a>
+                <a href="/product/iot" className="category-link">View Collection</a>
               </div>
             </div>
           </div>
@@ -92,7 +95,7 @@ const Hero = () => {
               <div className="category-overlay">
                 <h3>3D Printing</h3>
                 <p>Future of manufacturing</p>
-                <a href="/search/3D" className="category-link">View Collection</a>
+                <a href="/product/3D" className="category-link">View Collection</a>
               </div>
             </div>
           </div>

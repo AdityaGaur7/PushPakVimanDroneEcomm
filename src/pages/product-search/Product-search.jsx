@@ -202,12 +202,13 @@ const ProductSearch = () => {
                   </Link>
                   <div className="product-overlay">
                     <div className="d-flex gap-2 justify-content-end">
+                  
                       <button 
                         className="product-action-btn"
                         title="Add to Cart"
                         onClick={() => addToCart(product)}
                       >
-                        <FaShoppingCart size={16} />
+                        <FaShoppingCart size={16} /> 
                       </button>
                       {/* <button 
                         className="product-action-btn"

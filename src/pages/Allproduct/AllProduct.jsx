@@ -232,12 +232,7 @@ const HomePage = () => {
                       className="card-img-top"
                       style={{ height: "200px", objectFit: "contain" }}
                     />
-                    <button
-                      onClick={() => addToCart(product)}
-                      className="btn btn-light position-absolute top-0 end-0 m-2"
-                    >
-                      <FiShoppingCart />
-                    </button>
+                    
                   </div>
                   
                   <div className="card-body">
@@ -246,6 +241,14 @@ const HomePage = () => {
                       <span className="h5 text-primary mb-0">
                         ${product.price}
                       </span>
+                      <div>
+                        <FiShoppingCart />
+                      <button
+                      onClick={() => addToCart(product)}
+                      className="btn btn-light"
+                    >Add to Cart 
+                    </button>
+                      </div>
                       {/* <button className="btn btn-outline-danger btn-sm">
                         <FiHeart />
                       </button> */}
