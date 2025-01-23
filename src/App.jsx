@@ -3,8 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import HomeComponent from "./MainComponent/Home/Home.jsx";
 import LoginComponent from "./pages/Auth/login/Login.jsx";
 import SignupComponent from "./pages/Auth/signup/Signup.jsx";
-import FaqComponent from "./pages/Page/faq/FAQ.jsx";
-import AboutComponent from "./pages/Page/about/About.jsx";
+// import FaqComponent from "./pages/Page/faq/FAQ.jsx";
+// import AboutComponent from "./pages/Page/about/About.jsx";
 import ContactComponent from "./pages/Page/contact/Contact.jsx";
 import ServicesComponent from "./pages/Page/services/Services.jsx";
 import SearchAllComponent from "./pages/Allproduct/AllProduct.jsx";
@@ -22,6 +22,7 @@ import Cart from "./components/Cart/Cart.jsx";
 import ProductSearch from "./pages/product-search/Product-search.jsx";
 import ProductDetails from "./pages/ProductDetails/ProductDetails.jsx";
 import NotFound from "./pages/NotFound.jsx";
+import FloatingCart from "./components/FloatingCart/FloatingCart.jsx";
 
 function App() {
   return (
@@ -56,6 +57,7 @@ function App() {
           
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <FloatingCart />
       </div>
     </>
   );

@@ -14,7 +14,11 @@ const { Option } = Select;
 
 const HomePage = () => {
   const navigate = useNavigate();
-  const [category, setCategory] = useState(['Drone', '3D-Printing-Object', 'IOT-component']);
+  const [category, setCategory] = useState([
+    "Drone",
+    "3D-Printing-Object",
+    "IOT-component",
+  ]);
   const [product, setProduct] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const { cart, setCart } = useCart();
@@ -62,14 +66,16 @@ const HomePage = () => {
 
     // Filter by search term
     if (searchTerm) {
-      tempProducts = tempProducts.filter(
-        prod => prod.name.toLowerCase().includes(searchTerm.toLowerCase())
+      tempProducts = tempProducts.filter((prod) =>
+        prod.name.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
 
     // Filter by selected categories
     if (checked.length > 0) {
-      tempProducts = tempProducts.filter(prod => checked.includes(prod.category));
+      tempProducts = tempProducts.filter((prod) =>
+        checked.includes(prod.category)
+      );
     }
 
     // Sort products
@@ -96,17 +102,24 @@ const HomePage = () => {
   // Pagination Logic
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
+  const currentProducts = filteredProducts.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
 
   const addToCart = (product) => {
-    const existingProductIndex = cart.findIndex((item) => item._id === product._id);
+    const existingProductIndex = cart.findIndex(
+      (item) => item._id === product._id
+    );
     let updatedCart;
 
     if (existingProductIndex >= 0) {
       // Product already in cart, update quantity
       updatedCart = cart.map((item, index) =>
-        index === existingProductIndex ? { ...item, quantity: item.quantity + 1 } : item
+        index === existingProductIndex
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
       );
     } else {
       // Product not in cart, add with quantity 1
@@ -124,11 +137,11 @@ const HomePage = () => {
       return;
     }
     setCurrentPage(pageNumber);
-    
+
     // Scroll to top of the products section smoothly
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
 
@@ -148,7 +161,7 @@ const HomePage = () => {
               className="form-control"
             />
           </div>
-          
+
           <div className="filter-controls d-flex justify-content-between p-4">
             <Select
               defaultValue="default"
@@ -162,7 +175,7 @@ const HomePage = () => {
               <Option value="name-desc">Name: Z to A</Option>
             </Select>
 
-            <button 
+            <button
               className="btn btn-outline-primary"
               onClick={() => setIsModalVisible(true)}
             >
@@ -178,8 +191,8 @@ const HomePage = () => {
           open={isModalVisible}
           onCancel={() => setIsModalVisible(false)}
           footer={[
-            <button 
-              key="reset" 
+            <button
+              key="reset"
               className="btn btn-outline-danger me-2"
               onClick={() => {
                 setChecked([]);
@@ -194,7 +207,7 @@ const HomePage = () => {
               onClick={() => setIsModalVisible(false)}
             >
               Apply
-            </button>
+            </button>,
           ]}
         >
           <div className="category-filters">
@@ -207,7 +220,7 @@ const HomePage = () => {
                   checked={checked.includes(cat)}
                   onChange={() => {
                     const updatedChecked = checked.includes(cat)
-                      ? checked.filter(c => c !== cat)
+                      ? checked.filter((c) => c !== cat)
                       : [...checked, cat];
                     setChecked(updatedChecked);
                   }}
@@ -221,11 +234,12 @@ const HomePage = () => {
         {/* Products Grid with Loading State */}
         {loading ? (
           <div className="text-center py-5">
-            <div className="spinner-border text-primary" 
-              style={{ 
-                width: "3rem", 
-                height: "3rem" 
-              }} 
+            <div
+              className="spinner-border text-primary"
+              style={{
+                width: "3rem",
+                height: "3rem",
+              }}
               role="status"
             >
               <span className="visually-hidden">Loading...</span>
@@ -250,29 +264,31 @@ const HomePage = () => {
                       className="card-img-top"
                       style={{ height: "200px", objectFit: "contain" }}
                     />
-                    
                   </div>
-                  
+
                   <div className="card-body">
                     <h5 className="card-title">{product.name}</h5>
                     <div className="d-flex justify-content-between align-items-center mb-3">
                       <span className="h5 text-primary mb-0">
-                        ${product.price}
+                        Rs. {product.price}
                       </span>
                       <div>
                         <FiShoppingCart />
-                      <button
-                      onClick={() => addToCart(product)}
-                      className="btn btn-light"
-                    >Add to Cart 
-                    </button>
+                        <button
+                          onClick={() => addToCart(product)}
+                          className="btn btn-light"
+                        >
+                          Add to Cart
+                        </button>
                       </div>
                       {/* <button className="btn btn-outline-danger btn-sm">
                         <FiHeart />
                       </button> */}
                     </div>
                     <button
-                      onClick={() => navigate(`/productdetails/${product.slug}`)}
+                      onClick={() =>
+                        navigate(`/productdetails/${product.slug}`)
+                      }
                       className="btn btn-outline-primary w-100"
                     >
                       View Details
@@ -292,7 +308,9 @@ const HomePage = () => {
         {!loading && currentProducts.length > 0 && (
           <nav className="mt-4">
             <ul className="pagination justify-content-center">
-              <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
+              <li
+                className={`page-item ${currentPage === 1 ? "disabled" : ""}`}
+              >
                 <button
                   className="page-link"
                   onClick={() => handlePageChange(currentPage - 1)}
@@ -302,9 +320,11 @@ const HomePage = () => {
                 </button>
               </li>
               {[...Array(totalPages)].map((_, index) => (
-                <li 
-                  key={index + 1} 
-                  className={`page-item ${currentPage === index + 1 ? 'active' : ''}`}
+                <li
+                  key={index + 1}
+                  className={`page-item ${
+                    currentPage === index + 1 ? "active" : ""
+                  }`}
                 >
                   <button
                     className="page-link"
@@ -314,7 +334,11 @@ const HomePage = () => {
                   </button>
                 </li>
               ))}
-              <li className={`page-item ${currentPage === totalPages ? 'disabled' : ''}`}>
+              <li
+                className={`page-item ${
+                  currentPage === totalPages ? "disabled" : ""
+                }`}
+              >
                 <button
                   className="page-link"
                   onClick={() => handlePageChange(currentPage + 1)}
