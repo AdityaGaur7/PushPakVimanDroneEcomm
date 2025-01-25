@@ -70,6 +70,37 @@
 .footer-bottom {
   margin-top: 2rem;
   padding-top: 1.5rem;
- 
+
   font-size: 0.9rem;
+}
+
+.footer-policies {
+  font-size: 0.9rem;
+}
+
+.footer-policies a {
+  color: #6c757d;
+  transition: color 0.3s ease;
+}
+
+.footer-policies a:hover {
+  color: #0d6efd;
+}
+
+.policy-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+@media (max-width: 576px) {
+  .policy-links {
+    flex-direction: column;
+  }
+
+  .policy-links span {
+    display: none;
+  }
 }
