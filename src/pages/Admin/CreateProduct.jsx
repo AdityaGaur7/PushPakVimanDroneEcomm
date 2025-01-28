@@ -4,33 +4,33 @@ import AdminMenu from "../../components/Layout/AdminMenu.jsx";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { API_URL } from "../../api.js";
-import { FaEdit, FaTrash, FaSave, FaPlus } from 'react-icons/fa';
-import { Cloudinary } from '@cloudinary/url-gen';
+import { FaEdit, FaTrash, FaSave, FaPlus } from "react-icons/fa";
+import { Cloudinary } from "@cloudinary/url-gen";
 
 const styles = {
   formActions: {
-    marginTop: '20px',
-    display: 'flex',
-    gap: '10px'
+    marginTop: "20px",
+    display: "flex",
+    gap: "10px",
   },
   button: {
-    minWidth: '140px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: '8px',
-    padding: '8px 16px'
+    minWidth: "140px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "8px",
+    padding: "8px 16px",
   },
   productImage: {
-    marginTop: '10px',
-    borderRadius: '8px',
-    boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+    marginTop: "10px",
+    borderRadius: "8px",
+    boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
   },
   uploadStatus: {
-    marginTop: '8px',
-    textAlign: 'center',
-    color: '#666'
-  }
+    marginTop: "8px",
+    textAlign: "center",
+    color: "#666",
+  },
 };
 
 const CreateProduct = () => {
@@ -51,8 +51,8 @@ const CreateProduct = () => {
   // Initialize Cloudinary
   const cld = new Cloudinary({
     cloud: {
-      cloudName: 'dqmf2mh8d' // replace with your cloud name if different
-    }
+      cloudName: "dqmf2mh8d", // replace with your cloud name if different
+    },
   });
 
   // Fetch all products
@@ -156,27 +156,27 @@ const CreateProduct = () => {
     try {
       // Create form data
       const formData = new FormData();
-      formData.append('file', file);
-      formData.append('upload_preset', 'cloudinary_folder'); 
-      formData.append('cloud_name', 'dqmf2mh8d'); 
+      formData.append("file", file);
+      formData.append("upload_preset", "cloudinary_folder");
+      formData.append("cloud_name", "dqmf2mh8d");
 
       // Upload to Cloudinary
       const response = await fetch(
-        `https://api.cloudinary.com/v1_1/dqmf2mh8d/image/upload`, {
-          method:"POST",
-          body:formData
-        });
+        `https://api.cloudinary.com/v1_1/dqmf2mh8d/image/upload`,
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
-        const uploadedImageURL = await response.json();
-        // console.log(uploadedImageURL.secure_url);
-        
+      const uploadedImageURL = await response.json();
+      // console.log(uploadedImageURL.secure_url);
 
-
-        setImage(uploadedImageURL.secure_url);
-      toast.success('Image uploaded successfully');
+      setImage(uploadedImageURL.secure_url);
+      toast.success("Image uploaded successfully");
     } catch (error) {
       console.log(error);
-      toast.error('Error uploading image');
+      toast.error("Error uploading image");
     } finally {
       setLoading(false);
     }
@@ -198,14 +198,20 @@ const CreateProduct = () => {
             </div>
             <div className="col-md-9 admin-main">
               <div className="content-header">
-                <h2>{updateId ? 'Update Product' : 'Create New Product'}</h2>
+                <h2>{updateId ? "Update Product" : "Create New Product"}</h2>
                 <p className="text-muted">
-                  {updateId ? 'Update product information' : 'Add a new product to your store'}
+                  {updateId
+                    ? "Update product information"
+                    : "Add a new product to your store"}
                 </p>
               </div>
 
               <div className="product-form-container">
-                <form onSubmit={updateId ? handleUpdateProduct : handleCreateProduct}>
+                <form
+                  onSubmit={
+                    updateId ? handleUpdateProduct : handleCreateProduct
+                  }
+                >
                   <div className="row">
                     <div className="col-md-6">
                       <div className="form-group">
@@ -260,8 +266,13 @@ const CreateProduct = () => {
                         />
                         {loading && (
                           <div style={styles.uploadStatus}>
-                            <div className="spinner-border spinner-border-sm text-primary me-2" role="status">
-                              <span className="visually-hidden">Loading...</span>
+                            <div
+                              className="spinner-border spinner-border-sm text-primary me-2"
+                              role="status"
+                            >
+                              <span className="visually-hidden">
+                                Loading...
+                              </span>
                             </div>
                             <span>Uploading image...</span>
                           </div>
@@ -271,7 +282,12 @@ const CreateProduct = () => {
                             <img
                               src={image}
                               alt="product preview"
-                              style={{ width: '100px', height: '100px', objectFit: 'cover', borderRadius: '4px' }}
+                              style={{
+                                width: "100px",
+                                height: "100px",
+                                objectFit: "cover",
+                                borderRadius: "4px",
+                              }}
                             />
                           </div>
                         )}
@@ -298,8 +314,8 @@ const CreateProduct = () => {
                   </div>
 
                   <div className="form-actions" style={styles.formActions}>
-                    <button 
-                      type="submit" 
+                    <button
+                      type="submit"
                       className="btn btn-primary"
                       style={styles.button}
                       disabled={loading}
@@ -315,8 +331,8 @@ const CreateProduct = () => {
                       )}
                     </button>
                     {updateId && (
-                      <button 
-                        type="button" 
+                      <button
+                        type="button"
                         className="btn btn-secondary"
                         style={styles.button}
                         onClick={resetForm}
@@ -353,11 +369,15 @@ const CreateProduct = () => {
                           </td>
                           <td>
                             <div className="product-name">{item.name}</div>
-                            <small className="text-muted">{item.description.substring(0, 50)}...</small>
+                            <small className="text-muted">
+                              {item.description.substring(0, 50)}...
+                            </small>
                           </td>
-                          <td>${item.price}</td>
+                          <td>Rs.{item.price}</td>
                           <td>
-                            <span className="category-badge">{item.category}</span>
+                            <span className="category-badge">
+                              {item.category}
+                            </span>
                           </td>
                           <td>
                             <div className="action-buttons">
