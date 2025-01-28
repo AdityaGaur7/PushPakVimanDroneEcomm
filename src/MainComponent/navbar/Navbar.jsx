@@ -16,6 +16,7 @@ const Navbar = ({ loggedin, isadmin, onThemeToggle, currentTheme }) => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  
   const handleLogout = () => {
     setAuth({
       user: null,

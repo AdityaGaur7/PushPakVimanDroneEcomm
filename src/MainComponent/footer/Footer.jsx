@@ -13,11 +13,17 @@ const Footer = () => {
               alt="Company Logo"
               className="footer-logo mb-3"
             />
-            <p className="mb-2">support@drones-electronics.com</p>
+            <p className="mb-2">support@pushpakdronevimanshop.in</p>
             <div className="social-links">
-              <a href="/" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
-              <a href="/" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
-              <a href="/" aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
+              <a href="/" aria-label="Facebook">
+                <i className="fab fa-facebook-f"></i>
+              </a>
+              <a href="/" aria-label="Instagram">
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a href="/" aria-label="LinkedIn">
+                <i className="fab fa-linkedin-in"></i>
+              </a>
             </div>
           </div>
 
@@ -27,18 +33,34 @@ const Footer = () => {
             <div className="row">
               <div className="col-6">
                 <ul className="footer-links">
-                  <li><a href="/drones">Products</a></li>
-                  <li><a href="/blog">Blog</a></li>
-                  <li><a href="/contact">Contact</a></li>
-                  <li><a href="/support">Support</a></li>
+                  <li>
+                    <a href="/drones">Products</a>
+                  </li>
+                  <li>
+                    <a href="/blog">Blog</a>
+                  </li>
+                  <li>
+                    <a href="/contact">Contact</a>
+                  </li>
+                  <li>
+                    <a href="/support">Support</a>
+                  </li>
                 </ul>
               </div>
               <div className="col-6">
                 <ul className="footer-links">
-                  <li><a href="/faq">FAQ</a></li>
-                  <li><a href="/warranty">Warranty</a></li>
-                  <li><a href="/profile">My Account</a></li>
-                  <li><a href="/shipping">Shipping</a></li>
+                  <li>
+                    <a href="/faq">FAQ</a>
+                  </li>
+                  <li>
+                    <a href="/warranty">Warranty</a>
+                  </li>
+                  <li>
+                    <a href="/profile">My Account</a>
+                  </li>
+                  <li>
+                    <a href="/shipping">Shipping</a>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -63,10 +85,28 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Add this new section above the copyright */}
+        <div className="footer-policies text-center py-3 border-top mt-4">
+          <div className="policy-links">
+            <a href="/shipping-policy" className="mx-2 text-decoration-none">
+              Shipping Policy
+            </a>
+            <span className="mx-2">|</span>
+            <a href="/terms-conditions" className="mx-2 text-decoration-none">
+              Terms & Conditions
+            </a>
+            <span className="mx-2">|</span>
+            <a href="/privacy-policy" className="mx-2 text-decoration-none">
+              Privacy Policy
+            </a>
+          </div>
+        </div>
+
         {/* Copyright */}
         <div className="footer-bottom">
           <p className="text-center mb-0">
-            © {new Date().getFullYear()} DroneTech Innovators. All rights reserved.
+            © {new Date().getFullYear()} pushpakdronevimanshop.in. All rights
+            reserved.
           </p>
         </div>
       </div>
